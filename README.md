@@ -1,10 +1,7 @@
 # AnyMC3D
 
-Scalable 3D Medical Image Classifier adapted from 2D Foundation Models.
+This repository aims to reproduce [CVPR2026 AnyMC3D](https://arxiv.org/abs/2512.12887) for 3D medical image classification by fine-tuning 2D foundation models. 
 
-Based on: *"Revisiting 2D Foundation Models for Scalable 3D Medical Image Classification"* — Liu et al., 2025 ([arXiv:2512.12887](https://arxiv.org/abs/2512.12887))
-
-This implementation applies AnyMC3D to binary classification on the **PDCAD** dataset using Nuclear Medicine (NM) volumes, and 18-class multi-abnormality classification on the **CT-RATE** chest CT dataset.
 
 ---
 
@@ -65,21 +62,6 @@ AnyMC3D/
 ---
 
 ## Dataset Download
-
-### PDCAD
-
-The PDCAD dataset (Nuclear Medicine (NM) volumes, labels, and splits) is available for download via Google Drive:
-
-> 📁 **[Download PDCAD dataset](https://drive.google.com/drive/folders/1cLZosBVq2HbyDH0BbSxf90J4M96A_4gi?usp=drive_link)**
-
-The archive includes:
-- `labels.json` — binary labels for all cases
-- `splits.json` — train/val/test splits
-- Pre-processed `.npy` volumes (float32, channel-first, ready for training)
-
-After downloading, point `data_root`, `labels_path`, and `splits_path` in `configs/data/pdcad.yaml` to the extracted directory.
-
-> **Note on preprocessing:** The `.npy` files are pre-converted from the original `.nii.gz` images using `preprocess.py`. If you need to re-run preprocessing from raw NIfTI files (e.g. to change normalization parameters), see the [Preprocessing](#preprocessing) section below.
 
 ### CT-RATE
 
